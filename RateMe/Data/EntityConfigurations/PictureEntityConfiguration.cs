@@ -12,6 +12,7 @@ namespace RateMe.Data.EntityConfigurations
 
             builder.HasKey(p => p.Id);
             builder.Property(p => p.Name).HasMaxLength(255);
+            builder.Property(p => p.Type);
             builder.Property(p => p.Data);
 
             builder.HasOne(p=> p.User)

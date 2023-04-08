@@ -5,6 +5,7 @@
         public Picture()
         {
             Name = Guid.NewGuid().ToString();
+            Type = string.Empty;
             Comments = new List<Comment>();
         }
         public Picture(User? user, string name) : this()
@@ -14,6 +15,7 @@
         }
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Type { get; set; }
         public byte[] Data { get; set; }
         public User? _user;
         public string? UserId { get; set; }

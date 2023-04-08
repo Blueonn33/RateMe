@@ -13,10 +13,16 @@ namespace RateMe.Business.Services
             _dbContext = dbContext;
         }
 
-        public async Task AddPictureAsync(Picture picture)
+        //public async Task AddPictureAsync(Picture picture)
+        //{
+        //    await _dbContext.Pictures.AddAsync(picture);
+        //    await _dbContext.SaveChangesAsync();
+        //}
+        public async Task<Picture> SavePictureAsync(Picture picture)
         {
             await _dbContext.Pictures.AddAsync(picture);
             await _dbContext.SaveChangesAsync();
+            return picture;
         }
     }
 }

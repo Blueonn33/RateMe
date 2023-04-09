@@ -6,5 +6,6 @@ namespace RateMe.Business.Services.Interfaces
     {
         //Task AddPictureAsync(Picture picture);
         Task<Picture> SavePictureAsync(Picture picture);
+        Task<IEnumerable<Picture>> GetPicturesAsync();
     }
 }

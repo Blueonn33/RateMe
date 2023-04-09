@@ -30,6 +30,14 @@ namespace RateMe.Controllers
         //    return Ok();
         //}
 
+        [HttpGet]
+        [Route("api/pictures")]
+        public async Task<IEnumerable<Picture>> GetAllPictures()
+        {
+            Response.Headers.Add("Access-Control-Allow-Origin", "*");
+            return await _picturesService.GetPicturesAsync();
+        }
+
         [HttpPost]
         [Route("api/create/picture")]
         public async Task<ActionResult<Picture>> PostAsync([FromForm] IFormFile file)
